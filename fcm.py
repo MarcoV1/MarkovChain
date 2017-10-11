@@ -1,6 +1,7 @@
 import itertools
+import math
 texto = ""
-alfa = 0.000001
+alpha = 0.00000000000000000001
 def lerFicheiro(ficheiro):
     with open(ficheiro) as f:
         global texto
@@ -47,12 +48,11 @@ def letter_after_comb(order):
                         ocorr[c][letra]=1
                 else:
                     ocorr[c]= {letra : 1}
-
+    global alpha
     for a in ocorr:
         for x in alfabeto():
             if x not in ocorr[a]:
-                global alfa
-                ocorr[a][x] = 0
+                ocorr[a][x] = alpha
 
     return ocorr
 
@@ -67,24 +67,49 @@ def calc_ocorr(val):
 
 def letter_probability(order):
     letter_prob={}
+    alfab = alfabeto()
+    global alpha
     lac = letter_after_comb(order)
     cmb = combinations_in_text(order)
-    print(lac)
+    print(cmb)
     for key,value in lac.items():
         counter = 0
         for x,v in value.items():
             if(counter>0):
-                letter_prob[key][x] = v/calc_ocorr(value)
+                if(v==alpha):
+                    letter_prob[key][x] = v / calc_ocorr(value) + alpha
+                else:
+                    letter_prob[key][x] = v / calc_ocorr(value)
             else:
-                letter_prob[key] = { x : v/calc_ocorr(value) }
+                if(v==alpha):
+                    letter_prob[key] = {x: v / calc_ocorr(value) + alpha}
+                else:
+                    letter_prob[key] = {x: v / calc_ocorr(value)}
                 counter += 1
-
-
-
     return letter_prob
+""" para ver se as probabilidades das letras nas combs dá 1 tudo somado
+def teste(letprob):
+    print(letprob)
+    soma = 0
+    for k,v in letprob.items():
+        soma = 0
+        for x,y in v.items():
+            soma+=y
+        print(k,soma)
+    return ""
+"""
 
-
-
+def entropy_calc(letprob):
+    print(letprob)
+    print(alfabeto())
+    for k,v in letprob.items():
+        entropy=0
+        for x,y in v.items():
+            entropy+=y*math.log(y,2)
+        print("Combinação: "+k+"    Entropia: "+str(-entropy))
+    return ""
 # depois mudem para uma diretoria em linux
 lerFicheiro("texto.txt")
-print(letter_probability(3))
+print("1ª linha - combinações possíveis\n2ª linha combinações + prob de ocorrências de cada letra a seguir à comb.\n3ª linha alfabeto\n")
+print(entropy_calc(letter_probability(3)))
+
