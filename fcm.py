@@ -1,46 +1,36 @@
-def main(ficheiro):
-
-    dados = lerFicheiro(ficheiro)
-
-    # criar uma lista de todas as letras
-    dados = [i for i in dados if i != '']
-
-    # passar tudo para maiusculo, mais espaços
-    dados = [i.upper() for i in dados if i.isalpha() or i == " " ]
-
-    # com numeros / remover se nao for preciso
-    #dados = [i.upper() for i in dados ]
-
-    # criar um dicionario com todas as letras
-    chain = {i:[] for i in dados}
-
-    # adicionar uma letra associada a uma letra, se essa mesma a seguir
-    for j in range(len(dados) - 1):
-        chain[dados[j]].append(dados[j + 1])
-
-    temp = zip(range(len(chain)), list(chain))
-    n_chain = dict(temp)
-    #print(chain)
-    # é necessário estimar a probabilidade de cada letra seguir uma letra já escolhida
-
-    # escolher uma letra ao calhas do dicionario
-    #letra = random.choice(n_chain.keys())
-
-
-    # criar uma frase no fim com um numero minimo e maximo de letras
-    #frase = random.randint(n, m)
-
-    # retornar frase no final
-    return None;
+import itertools
 
 def lerFicheiro(ficheiro):
     with open(ficheiro) as f:
         texto = f.read()
     return texto
 
-def calcularProbabilidade():
-    next();
+def statistical_info(ficheiro, order):
+
+    texto = lerFicheiro(ficheiro).upper()
+    dados = [i for i in texto if i.isalpha() or i == " "]
+    alfabeto = list(set(dados))
+    print(alfabeto)
+    combinations = list(itertools.product(alfabeto, repeat = order))
+    combinations_in_text = []
+    for i in combinations:
+        combinations_in_text.append(''.join(i))
+    print(len(combinations_in_text))
+    cmb = []
+    for c in combinations_in_text:
+        if(c in texto):
+            cmb.append(c)
+
+    print(len(cmb))
+
+
+
+
+
+
+
 
 
 # depois mudem para uma diretoria em linux
-print(main("C:/Users/Marco/Desktop/TAI/Lab1/texto.txt"))
+statistical_info("texto.txt", 6)
+
