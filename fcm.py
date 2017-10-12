@@ -77,17 +77,17 @@ def letter_probability(order):
         for x,v in value.items():
             if(counter>0):
                 if(v==alpha):
-                    letter_prob[key][x] = v / calc_ocorr(value) + alpha
+                    letter_prob[key][x] = v / (calc_ocorr(value) + alpha)
                 else:
                     letter_prob[key][x] = v / calc_ocorr(value)
             else:
                 if(v==alpha):
-                    letter_prob[key] = {x: v / calc_ocorr(value) + alpha}
+                    letter_prob[key] = {x: v / (calc_ocorr(value) + alpha)}
                 else:
                     letter_prob[key] = {x: v / calc_ocorr(value)}
                 counter += 1
     return letter_prob
-""" para ver se as probabilidades das letras nas combs dá 1 tudo somado
+
 def teste(letprob):
     print(letprob)
     soma = 0
@@ -97,7 +97,7 @@ def teste(letprob):
             soma+=y
         print(k,soma)
     return ""
-"""
+
 
 def entropy_calc(letprob):
     print(letprob)
@@ -108,8 +108,15 @@ def entropy_calc(letprob):
             entropy+=y*math.log(y,2)
         print("Combinação: "+k+"    Entropia: "+str(-entropy))
     return ""
-# depois mudem para uma diretoria em linux
-lerFicheiro("texto.txt")
+
+order = 3
+ficheiro = "texto.txt"
+
+
 print("1ª linha - combinações possíveis\n2ª linha combinações + prob de ocorrências de cada letra a seguir à comb.\n3ª linha alfabeto\n")
-print(entropy_calc(letter_probability(3)))
+
+lerFicheiro(ficheiro)
+lp = letter_probability(order)
+#print(teste(lp))
+print(entropy_calc(lp))
 
