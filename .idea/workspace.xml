@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3cf4bba-7a78-4af2-a835-7536d23f49ea" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generator.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fcm.py" afterPath="$PROJECT_DIR$/fcm.py" />
-    </list>
+    <list default="true" id="b3cf4bba-7a78-4af2-a835-7536d23f49ea" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -418,7 +414,14 @@
       <option name="project" value="LOCAL" />
       <updated>1507802492085</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="generator done , só falta meter um texto maior e aumentar a ordem e deve ser + preciso">
+      <created>1507817515532</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1507817515532</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -466,7 +469,8 @@
     <MESSAGE value="statistical almost done" />
     <MESSAGE value="entropy calculation" />
     <MESSAGE value="correction" />
-    <option name="LAST_COMMIT_MESSAGE" value="correction" />
+    <MESSAGE value="generator done , só falta meter um texto maior e aumentar a ordem e deve ser + preciso" />
+    <option name="LAST_COMMIT_MESSAGE" value="generator done , só falta meter um texto maior e aumentar a ordem e deve ser + preciso" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
