@@ -9,11 +9,11 @@ texto = ""
 
 def lerFicheiro(ficheiro):
     global texto
-    with open(ficheiro) as f:
+    with open(ficheiro, encoding="utf8") as f:
         texto = f.read().upper()
         texto1 = ""
         for i in texto:
-            if i.isalpha() or i == " ":
+            if i.isalpha() or i == " " or i=="\n":
                 texto1 += i
         texto = texto1
     return texto1
@@ -40,15 +40,15 @@ def combinations_in_text(order):
 
 
 def combination_next_letter(order):
-    text = lerFicheiro("textocurto.txt")
+    global texto
 
     ocorr = dict()
     alfab = alfabeto()
 
-    for i in range(0, len(text) - order):
-        print("Combinação: {}, Letra seguinte: {}".format(text[i : order + i], text[order + i]))
-        cmb = text[i : order + i]
-        next_letter = text[order + i]
+    for i in range(0, len(texto) - order):
+        #print("Combinação: {}, Letra seguinte: {}".format(text[i : order + i], text[order + i]))
+        cmb = texto[i : order + i]
+        next_letter = texto[order + i]
         if cmb in ocorr:
             if next_letter in ocorr[cmb]:
                 ocorr[cmb][next_letter] += 1
@@ -56,51 +56,7 @@ def combination_next_letter(order):
                 ocorr[cmb][next_letter] = 1
         else:
             ocorr[cmb] = {next_letter : 1}
-    for a in ocorr:
-        for x in alfab:
-            if x not in ocorr[a]:
-                ocorr[a][x] = alpha
     return ocorr
-
-
-'''
-POUCO EFICIENTE
-def letter_after_comb(order):
-    ocorr = {}
-    alfab = alfabeto()
-    global texto
-    cmb = combinations_in_text(order)
-    s1 = time.time()
-    for c in cmb:
-        s = texto.split(c)
-        for i in range(1, len(s)):
-            if s[i] != "":
-                letra = s[i][0]
-                if c in ocorr:
-                    if letra in ocorr[c]:
-                        ocorr[c][letra] += 1
-                    else:
-                        ocorr[c][letra] = 1
-                else:
-                    ocorr[c] = {letra : 1}
-            elif(s[i] == "" and i < len(s)):
-                letra = c[0]
-                if c in ocorr:
-                    if letra in ocorr[c]:
-                        ocorr[c][letra] += 1
-                    else:
-                        ocorr[c][letra] = 1
-                else:
-                    ocorr[c] = {letra : 1}
-    print("For c in cmb: {}".format(time.time() - s1))
-    global alpha
-    for a in ocorr:
-        for x in alfab:
-            if x not in ocorr[a]:
-                ocorr[a][x] = alpha
-    return ocorr
-'''
-
 
 def calc_ocorr(val):
     count = 0
@@ -113,62 +69,54 @@ def calc_ocorr(val):
 
 def letter_probability(order):
     letter_prob={}
+    alfb = alfabeto()
     global alpha
-
     lac = combination_next_letter(order)
-    #cmb = combinations_in_text(order)
-
+    #print(lac)
     for key,value in lac.items():
+        alf1 = alfb
         counter = 0
+        alf1 = list(filter(lambda z: z not in list(value.keys()),alfb))
+        #print(alf1)
         for x,v in value.items():
             if(counter>0):
-                if(v==alpha):
-                    letter_prob[key][x] = v / (calc_ocorr(value) + alpha)
-                else:
-                    letter_prob[key][x] = v / calc_ocorr(value)
+                letter_prob[key][x] = (v+alpha) / (calc_ocorr(value) + alpha)
             else:
-                if(v==alpha):
-                    letter_prob[key] = {x: v / (calc_ocorr(value) + alpha)}
-                else:
-                    letter_prob[key] = {x: v / calc_ocorr(value)}
+                letter_prob[key] = {x: (v+alpha) / (calc_ocorr(value) + alpha)}
                 counter += 1
+        for l in alf1:
+            letter_prob[key][l] = (alpha) / (calc_ocorr(value) + len(alfb) * alpha)
     return letter_prob
-
-
-'''
+"""
 def teste(letprob):
-    print(letprob)
     soma = 0
     for k,v in letprob.items():
         soma = 0
         for x,y in v.items():
             soma+=y
-        print(k,soma)
+        #print(k,soma)
     return ""
-'''
+"""
 
 
 def entropy_calc(letprob):
-    print(letprob)
-    print(alfabeto())
+    #print(letprob)
+    #print(alfabeto())
     for k,v in letprob.items():
         entropy=0
         for x,y in v.items():
             entropy+=y*math.log(y,2)
-        print("Combinação: "+k+"    Entropia: "+str(-entropy))
+        #print("Combinação: "+k+"    Entropia: "+str(-entropy))
     return ""
 
-order = 9 #para alterar a ordem
-ficheiro = "texto.txt" #path do ficheiro
+order = 4 #para alterar a ordem
+ficheiro = "texto.txt" #path do ficheiro a ser lido
 alpha = 0.00000000000000000001 #valor de alpha
-
+lerFicheiro(ficheiro)
 print("1ª linha - combinações possíveis\n2ª linha combinações + prob de ocorrências de cada letra a seguir à comb.\n3ª linha alfabeto\n")
-
-#lerFicheiro(ficheiro)
 
 s2 = time.time()
 lp = letter_probability(order)
-# print(teste(lp))
 
 entropy_calc(lp)
 print("Tempo de execução total: {} segundos".format(time.time() - s2))
