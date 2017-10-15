@@ -14,7 +14,7 @@ def write_initial():
             print("Ordem demasiado grande para texto tão pequeno!\n")
             continue
         else:
-            print("entrou")
+            print("espere...")
             break
     return txt_input
 
@@ -27,7 +27,6 @@ def generate(size):
     for i in initial_text:
         if i.isalpha() or i == " ":
             filtered_txt+= i
-    print("aqui")
     while len(filtered_txt)<size:
         last_cmb = filtered_txt[-order:]
         if(last_cmb in list(lp.keys())):
@@ -35,14 +34,12 @@ def generate(size):
         else:
             print(len(filtered_txt))
             filtered_txt += random.choice(al)
-    print("saiu")
     file = open(generate_file,'w')
     file.write(filtered_txt)
     file.close()
     return "Texto gerado!"
 
 
-
-generate(generate_size)
+print(generate(generate_size))
 
 

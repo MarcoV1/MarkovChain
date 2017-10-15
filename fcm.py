@@ -109,7 +109,7 @@ def entropy_calc(letprob):
         #print("Combinação: "+k+"    Entropia: "+str(-entropy))
     return ""
 
-order = 4 #para alterar a ordem
+order = 8 #para alterar a ordem
 ficheiro = "texto.txt" #path do ficheiro a ser lido
 alpha = 0.00000000000000000001 #valor de alpha
 lerFicheiro(ficheiro)
