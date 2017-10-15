@@ -26,19 +26,6 @@ def alfabeto():
     return alfabeto
 
 
-def combinations_in_text(order):
-    global texto
-    combinations_txt = []
-    for c in range(len(texto)):
-        cmb = ""
-        if c > len(texto) - order:
-            break
-        for i in range(c, order + c):
-            cmb += texto[i]
-        combinations_txt.append(cmb)
-    return combinations_txt
-
-
 def combination_next_letter(order):
     global texto
 
