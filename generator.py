@@ -14,7 +14,6 @@ def write_initial():
             print("Ordem demasiado grande para texto tão pequeno!\n")
             continue
         else:
-            print("espere...")
             break
     return txt_input
 

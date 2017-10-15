@@ -104,13 +104,13 @@ def entropy_calc(letprob):
         for x,y in v.items():
             entropy+=y*math.log(y,2)
         #print("Combinação: "+k+"    Entropia: "+str(-entropy))
-        entropia_total += entropy
+    entropia_total = -entropy
     print("Entropia total estimada do texto: {}".format(entropia_total))
     return ""
 
-order = 6 #para alterar a ordem
+order = 2 #para alterar a ordem
 ficheiro = "texto.txt" #path do ficheiro a ser lido
-alpha = 0.000000000001 #valor de alpha
+alpha = 0.0000000000001#valor de alpha
 lerFicheiro(ficheiro)
 #print("1ª linha - combinações possíveis\n2ª linha combinações + prob de ocorrências de cada letra a seguir à comb.\n3ª linha alfabeto\n")
 
