@@ -12,7 +12,7 @@ def write_initial():
     global order
     while True:
         txt_input = input("Insira a combinação/frase inicial (com coerência se possível): \n").upper()
-        if len(txt_input < order):
+        if len(txt_input) < order:
             print("Ordem demasiado grande para texto tão pequeno!\n")
             continue
         else:
