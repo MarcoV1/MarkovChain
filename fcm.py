@@ -60,9 +60,7 @@ def combination_next_letter(order):
 
 def calc_ocorr(val):
     count = 0
-    #print(val)
     lista_val = list(val.values())
-    #print(lista_val)
     for x in lista_val:
         count+=x
     return count
@@ -72,12 +70,10 @@ def letter_probability(order):
     alfb = alfabeto()
     global alpha
     lac = combination_next_letter(order)
-    #print(lac)
     for key,value in lac.items():
         alf1 = alfb
         counter = 0
         alf1 = list(filter(lambda z: z not in list(value.keys()),alfb))
-        #print(alf1)
         for x,v in value.items():
             if(counter>0):
                 letter_prob[key][x] = (v+alpha) / (calc_ocorr(value) + alpha)
@@ -102,18 +98,21 @@ def teste(letprob):
 def entropy_calc(letprob):
     #print(letprob)
     #print(alfabeto())
+    entropia_total=0
     for k,v in letprob.items():
         entropy=0
         for x,y in v.items():
             entropy+=y*math.log(y,2)
         #print("Combinação: "+k+"    Entropia: "+str(-entropy))
+        entropia_total += entropy
+    print("Entropia total estimada do texto: {}".format(entropia_total))
     return ""
 
-order = 8 #para alterar a ordem
+order = 6 #para alterar a ordem
 ficheiro = "texto.txt" #path do ficheiro a ser lido
-alpha = 0.00000000000000000001 #valor de alpha
+alpha = 0.000000000001 #valor de alpha
 lerFicheiro(ficheiro)
-print("1ª linha - combinações possíveis\n2ª linha combinações + prob de ocorrências de cada letra a seguir à comb.\n3ª linha alfabeto\n")
+#print("1ª linha - combinações possíveis\n2ª linha combinações + prob de ocorrências de cada letra a seguir à comb.\n3ª linha alfabeto\n")
 
 s2 = time.time()
 lp = letter_probability(order)

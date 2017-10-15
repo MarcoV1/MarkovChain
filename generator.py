@@ -1,7 +1,7 @@
 from fcm import *
 import numpy as np
 import random
-generate_size = 10000 #tamanho do texto a ser gerado
+generate_size = 1000 #tamanho do texto a ser gerado
 generate_file = "generated_text.txt" #ficheiro onde o texto vai ser gerado
 #para alterar as outras variáveis globais (order,etc...) altere no fcm.py
 # --------------------- GENERATE TEXT ----------------------------------------
