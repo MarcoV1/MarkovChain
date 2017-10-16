@@ -53,12 +53,12 @@ def calc_ocorr(val):
     return count
 
 
-def letter_probability(order):
+def letter_probability(order, cnl):
     letter_prob = {}
     alfb = alfabeto()
     global alpha
-    lac = combination_next_letter(order)
-    for key, value in lac.items():
+
+    for key, value in cnl.items():
         alf1 = alfb
         counter = 0
         alf1 = list(filter(lambda z: z not in list(value.keys()), alfb))
@@ -85,28 +85,38 @@ def teste(letprob):
 """
 
 
-def entropy_calc(letprob):
+def get_every_ocorr(dictio):
+    count = 0
+    for key, value in dictio.items():
+        for k, v in value.items():
+            count += v
+    return count
 
-    entropy = 0
+
+def entropy_calc(letprob, cnl):
+    geo = get_every_ocorr(cnl)
+    entropy_total = 0
     for k, v in letprob.items():
+        entropy = 0
         for x, y in v.items():
             entropy -= y * math.log(y, 2)
 
-    print("Entropia total estimada do texto: {}".format(entropy))
-    print("Entropia Média: {}".format(entropy/len(letprob.keys())))
+        entropy_total += entropy * (calc_ocorr(cnl[k])/geo)
+
+    print("Entropia estimada do texto: {}".format(round(entropy_total, 3)))
     return ""
 
 
 order = 9  # para alterar a ordem
 ficheiro = "texto.txt"  # path do ficheiro a ser lido
 alpha = 0.0000000000001  # valor de alpha
-read_file(ficheiro)
 # print("1ª linha - combinações possíveis\n2ª linha combinações + prob de ocorrências de cada letra a seguir à comb.\n3ª linha alfabeto\n")
 
 s2 = time.time()
-lp = letter_probability(order)
 
-entropy_calc(lp)
+read_file(ficheiro)
+cnl = combination_next_letter(order)
+lp = letter_probability(order, cnl)
+
+entropy_calc(lp, cnl)
 print("Tempo de execução total: {} segundos".format(time.time() - s2))
-
-combination_next_letter(order)
