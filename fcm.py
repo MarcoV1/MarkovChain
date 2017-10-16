@@ -32,7 +32,6 @@ def combination_next_letter(order):
     ocorr = dict()
 
     for i in range(0, len(texto) - order):
-        # print("Combinação: {}, Letra seguinte: {}".format(text[i : order + i], text[order + i]))
         cmb = texto[i: order + i]
         next_letter = texto[order + i]
         if cmb in ocorr:
@@ -73,16 +72,16 @@ def letter_probability(order, cnl):
     return letter_prob
 
 
-"""
+
 def teste(letprob):
     soma = 0
     for k,v in letprob.items():
         soma = 0
         for x,y in v.items():
             soma+=y
-        #print(k,soma)
+        print(k,soma)
     return ""
-"""
+
 
 
 def get_every_ocorr(dictio):
@@ -107,10 +106,9 @@ def entropy_calc(letprob, cnl):
     return ""
 
 
-order = 9  # para alterar a ordem
+order = 7  # para alterar a ordem
 ficheiro = "texto.txt"  # path do ficheiro a ser lido
-alpha = 0.0000000000001  # valor de alpha
-# print("1ª linha - combinações possíveis\n2ª linha combinações + prob de ocorrências de cada letra a seguir à comb.\n3ª linha alfabeto\n")
+alpha = 0.00000001  # valor de alpha
 
 s2 = time.time()
 
