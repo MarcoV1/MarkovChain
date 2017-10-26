@@ -2,33 +2,26 @@
 import math
 import time
 
-texto = ""
-
 # STATISTICAL INFORMATION
 
 
 def read_file(file):
-    global texto
     with open(file, encoding="utf8") as f:
         texto = f.read().upper()
         texto1 = ""
         for i in texto:
             if i.isalpha() or i == " " or i == "\n":
                 texto1 += i
-        texto = texto1
     return texto1
 
 
-def alfabeto():
-    global texto
+def alfabeto(texto):
     dados = [i for i in texto if i.isalpha() or i == " "]
     alfabeto = list(set(dados))
     return alfabeto
 
 
-def combination_next_letter(order):
-    global texto
-
+def combination_next_letter(order,texto):
     ocorr = dict()
 
     for i in range(0, len(texto) - order):
@@ -52,10 +45,9 @@ def calc_ocorr(val):
     return count
 
 
-def letter_probability(order, cnl):
+def letter_probability(cnl,alpha,texto):
     letter_prob = {}
-    alfb = alfabeto()
-    global alpha
+    alfb = alfabeto(texto)
 
     for key, value in cnl.items():
         alf1 = alfb
@@ -72,14 +64,12 @@ def letter_probability(order, cnl):
     return letter_prob
 
 
-
 def teste(letprob):
     soma = 0
     for k,v in letprob.items():
         soma = 0
         for x,y in v.items():
             soma+=y
-        print(k,soma)
     return ""
 
 
@@ -101,20 +91,7 @@ def entropy_calc(letprob, cnl):
             entropy -= y * math.log(y, 2)
 
         entropy_total += entropy * (calc_ocorr(cnl[k])/geo)
-
-    print("Entropia estimada do texto: {}".format(round(entropy_total, 3)))
-    return ""
+    return entropy_total
 
 
-order = 7  # para alterar a ordem
-ficheiro = "texto.txt"  # path do ficheiro a ser lido
-alpha = 0.00000001  # valor de alpha
 
-s2 = time.time()
-
-read_file(ficheiro)
-cnl = combination_next_letter(order)
-lp = letter_probability(order, cnl)
-
-entropy_calc(lp, cnl)
-print("Tempo de execução total: {} segundos".format(time.time() - s2))
