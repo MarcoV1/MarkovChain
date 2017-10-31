@@ -1,4 +1,3 @@
-/.ideia/
-.~lock.Relatorio.docx#
-generated_text.txt
-Relatorio.docx
+
+.idea/
+__pycache__/
