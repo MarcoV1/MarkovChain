@@ -27,7 +27,7 @@ def main():
     order = int(input("Ordem: "))  # valor da ordem
     alpha = float(input("Valor de alpha: "))  # valor de alpha
     text_class = input("Nome do txtfile a ser adivinhado ([language(em inglês)]_guess.txt) : ")
-    text_class = read_file('guess_texts\\' + text_class)
+    text_class = read_file(os.path.join(os.getcwd(), "guess_texts", text_class))
 
 
     for filename in os.listdir(os.path.join(os.getcwd(), "Idioms")):
