@@ -2,9 +2,15 @@ from fcm import *
 import numpy as np
 import random
 
-generate_size = 300  # tamanho do texto a ser gerado
+generate_size = int(input("Número de caratéres do texto a ser gerado: "))  # tamanho do texto a ser gerado
 generate_file = "generated_text.txt"  # ficheiro onde o texto vai ser gerado
-# para alterar as outras variáveis globais (order,etc...) altere no fcm.py
+order = int(input("Ordem: "))  # valor da ordem
+alpha = float(input("Valor de alpha: "))   # valor de alpha
+ficheiro = input("Ficheiro de texto a ser computado ([language](em inglês)_guess.txt): ")
+texto = read_file("guess_texts\\"+ficheiro)
+cnl = combination_next_letter(order,texto)
+lp = letter_probability(cnl,alpha,texto)
+print("Para o texto gerado verifique o ficheiro: generated_text.txt !")
 # --------------------- GENERATE TEXT ----------------------------------------
 
 
@@ -20,10 +26,8 @@ def write_initial():
     return txt_input
 
 
-def generate(size):
-    global lp
-    global order
-    al = alfabeto()
+def generate(size,lp,order,texto):
+    al = alfabeto(texto)
     initial_text = write_initial()
     filtered_txt = ""
     for i in initial_text:
@@ -45,6 +49,6 @@ def generate(size):
     return "Texto gerado!"
 
 
-print(generate(generate_size))
+print(generate(generate_size,lp,order,texto))
 
 
