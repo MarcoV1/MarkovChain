@@ -54,9 +54,9 @@ texto = read_file(ficheiro)
 cnl = combination_next_letter(order,texto)
 lp = letter_probability(cnl,alpha,texto)
 lang_bit.append(("German",bit_estimation_for_guess(text_class,lp,cnl)))
-print("Formato: (Linguagem, Estimação de bits)")
+
 print(lang_bit)
-print("\nThe text is in: "+(min(lang_bit, key=lambda t: t[1])[0]))
+print("The text is in: "+(min(lang_bit, key=lambda t: t[1])[0]))
 
 
 
