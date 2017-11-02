@@ -1,6 +1,8 @@
 from fcm import *
+import os
+import re
 
-def bit_estimation_for_guess(text_class,lp,cnl):
+def bit_estimation_for_guess(text_class, lp, cnl, alpha, order):
     alfb = alfabeto(text_class)
     probs = []
     for i in range(0, len(text_class) - order):
@@ -19,46 +21,25 @@ def bit_estimation_for_guess(text_class,lp,cnl):
     return bit_est
 
 
-lang_bit = []
-order = int(input("Ordem: "))  # valor da ordem
-alpha = float(input("Valor de alpha: "))   # valor de alpha
-text_class = input("Nome do txtfile a ser adivinhado ([language(em inglês)]_guess.txt) : ")
-text_class = read_file('guess_texts\\' + text_class)
+def main():
+    lang_bit = []
+
+    order = int(input("Ordem: "))  # valor da ordem
+    alpha = float(input("Valor de alpha: "))  # valor de alpha
+    text_class = input("Nome do txtfile a ser adivinhado ([language(em inglês)]_guess.txt) : ")
+    text_class = read_file('guess_texts\\' + text_class)
 
 
-ficheiro = "Idioms\\english.txt"
-texto = read_file(ficheiro)
-cnl = combination_next_letter(order,texto)
-lp = letter_probability(cnl,alpha,texto)
-lang_bit.append(("English",bit_estimation_for_guess(text_class,lp,cnl)))
+    for filename in os.listdir(os.path.join(os.getcwd(), "Idioms")):
+        text = read_file(os.path.join(os.getcwd(), "Idioms", filename))
+        cnl = combination_next_letter(order, text)
+        lp = letter_probability(cnl, alpha, text)
+        lang_bit.append((re.sub(".txt", "", filename).capitalize(), bit_estimation_for_guess(text_class, lp, cnl, alpha, order)))
+
+    print(lang_bit)
+    print("The text is in: " + (min(lang_bit, key=lambda t: t[1])[0]))
+    pass
 
 
-ficheiro = "Idioms\\french.txt"
-texto = read_file(ficheiro)
-cnl = combination_next_letter(order,texto)
-lp = letter_probability(cnl,alpha,texto)
-lang_bit.append(("French",bit_estimation_for_guess(text_class,lp,cnl)))
-
-
-
-ficheiro = "Idioms\\portuguese.txt"
-texto = read_file(ficheiro)
-cnl = combination_next_letter(order,texto)
-lp = letter_probability(cnl,alpha,texto)
-lang_bit.append(("Portuguese",bit_estimation_for_guess(text_class,lp,cnl)))
-
-
-
-ficheiro = "Idioms\\german.txt"
-texto = read_file(ficheiro)
-cnl = combination_next_letter(order,texto)
-lp = letter_probability(cnl,alpha,texto)
-lang_bit.append(("German",bit_estimation_for_guess(text_class,lp,cnl)))
-
-print(lang_bit)
-print("The text is in: "+(min(lang_bit, key=lambda t: t[1])[0]))
-
-
-
-
-
+if __name__ == '__main__':
+    main()
