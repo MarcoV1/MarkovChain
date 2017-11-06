@@ -7,12 +7,20 @@ import time
 
 def read_file(file):
     with open(file, encoding="utf8") as f:
-        texto = f.read().upper()
-        texto1 = ""
-        for i in texto:
+        text = f.read().upper()
+        pText = ""
+        for i in text:
             if i.isalpha() or i == " " or i == "\n":
-                texto1 += i
-    return texto1
+                pText += i
+    return pText
+
+
+def read_text(text):
+    pText = ""
+    for i in text:
+        if i.isalpha() or i == " " or i == "\n":
+            pText += i
+    return pText
 
 
 def alfabeto(texto):
