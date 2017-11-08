@@ -17,7 +17,7 @@ def read_file(file):
 
 def read_text(text):
     pText = ""
-    for i in text:
+    for i in text.upper():
         if i.isalpha() or i == " " or i == "\n":
             pText += i
     return pText
