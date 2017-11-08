@@ -5,4 +5,4 @@ $ sudo pip install numpy scipy
 
 Os textos a serem computados para a formação do modelo encontram-se na diretoria Idioms.
 Os textos a serem adivinhados encontram-se na diretoria guess_texts.
-No programa basta fornecer o nome do ficheiro, não é necessário colocar a diretoria inteira.
+No programa basta fornecer o nome do ficheiro(ex: english_guess.txt), não é necessário colocar a diretoria inteira.

@@ -16,8 +16,8 @@ def bit_estimation_for_guess(text_class, lp, cnl, alpha, order):
         else:
             probs.append(alpha/(alpha*len(alfb)))
     bit_est = 0
-    for x in range(len(probs)):
-        bit_est -= math.log(probs[x],2)
+    for x in probs:
+        bit_est -= math.log(probs,2)
     return bit_est
 
 
