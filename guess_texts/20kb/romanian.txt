@@ -1,4 +1,3 @@
-
 Aceasta carte contine teoria mea originala, numita MDT (Modeling Devices Theory), 
 asupra functiilor hardware de baza ale unui creier (animal sau uman).
 
@@ -350,26 +349,10 @@ integram o informatie generata de modelele M intr-un context general. De asemene
 modelele cu bataie lunga de tip ZM permit sa prezicem si mai bine evolutia 
 realitatii externe.
 
-Exemplu: un model M ne transmite informatia ca in fata noastra se afla un ciine. 
-Un model ZM se va activa automat si va obtine informatii suplimentare legate de 
-acel ciine, de la oricare alt model al creierului. Chiar daca acel ciine nu a mai 
-fost intilnit, un model ZM poate sa faca evaluari de comportament a rasei careia 
-ii apartine acel ciine sau in functie de comportamentul lui asa cum este reflectat 
-de modelele M dar si in functie de alte modele ZM existente.
-
 Pe nivelul 2 deci, modelele ZM cu bataie lunga sunt in stare sa integreze 
 informatiile date de modelele M.
 
 Aici putem deja sa dam  definitiile a doi termeni foarte importanti: cunoasterea 
 si constiinta. 
 
-Cunoasterea este capacitatea de a prezice evolutia realitatii externe pe baza unei 
-structuri de modele armonice/logice asociate acelei realitati externe. Aceasta 
-structura de modele a generat deja un mare numar de predictii deja confirmate. 
-Asta inseamna ca singura garantie a predictiei corecte este increderea in 
-structura de modele disponibile. Vom reveni la aceasta problema.
-
-Constiinta este capacitatea de a construi si opera unul sau mai multe modele ZM, 
-asociate sau nu realitatii externe, in care propria persoana apare ca element. Si 
-asupra acestei probleme vom mai reveni.
 
