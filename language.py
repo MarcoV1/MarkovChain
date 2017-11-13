@@ -23,6 +23,7 @@ def bit_estimation_for_guess(text_class, lp, cnl, alpha, order):
 
 def main():
     lang_bit = []
+    lang_length = []
     manual_values, text_guess = "", ""
     quit = False
 
@@ -55,7 +56,7 @@ def main():
                 break
 
         elif manual_values in ('no', 'n'):
-            order, alpha = 3, 0.000001
+            order, alpha = 3, 0.01
             print("Using default values. Order -> {}, Alpha -> {}.".format(order, alpha))
 
         else:
@@ -92,7 +93,9 @@ Choose an option.
             cnl = combination_next_letter(order, text)
             lp = letter_probability(cnl, alpha, text)
             lang_bit.append((re.sub(".txt", "", filename).capitalize(), bit_estimation_for_guess(text_guess, lp, cnl, alpha, order)))
+            lang_length.append((len(text), re.sub(".txt", "", filename).capitalize()))
 
+        print(lang_length)
         print(lang_bit)
         print("The text is in: " + (min(lang_bit, key=lambda t: t[1])[0]))
     else:
