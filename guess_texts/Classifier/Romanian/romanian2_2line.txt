@@ -1,2 +1,0 @@
-O stiinta exacta doar declara modelul si predictiile. Daca, in baza verificarii predictiilor, cistigam incredere in model, 
-atunci modelul va mai fi folosit si in alte situatii similare, deoarece este util. 
