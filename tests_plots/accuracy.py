@@ -11,9 +11,10 @@ tamanho = 700000
 
 total = tm()
 
-for idioms in os.listdir(os.path.join(os.getcwd(), "..\\Idioms")):
+
+for idioms in os.listdir(os.path.join(os.getcwd(), "..", "Idioms")):
     print(re.sub(".txt", "", idioms).capitalize(), "model")
-    text = read_file(os.path.join(os.getcwd(), "..\\Idioms", idioms))
+    text = read_file(os.path.join(os.getcwd(), "..", "Idioms", idioms))
     text = text[0: tamanho]
     each_lang.append((re.sub(".txt", "", idioms).capitalize(), text))
     lang_length.append((len(text), re.sub(".txt", "", idioms).capitalize()))
@@ -27,12 +28,12 @@ for idioms in os.listdir(os.path.join(os.getcwd(), "..\\Idioms")):
 
 print(lang_length)
 
-for idiom in os.listdir(os.path.join(os.getcwd(), "..\\Classifier")):
+for idiom in os.listdir(os.path.join(os.getcwd(), "..", "Classifier")):
     start = tm()
     language = idiom
     print("Começou", language)
-    for text in os.listdir(os.path.join(os.getcwd(), "..\\Classifier\\" + idiom)):
-        text_guess = read_file(os.path.join(os.getcwd(), "..\\Classifier\\" + language, text))
+    for text in os.listdir(os.path.join(os.getcwd(), "..", "Classifier", idiom)):
+        text_guess = read_file(os.path.join(os.getcwd(), "..", "Classifier", language, text))
         lang_bit = []
         for data in lang_learn:
             be = bit_estimation_for_guess(text_guess, data[1], data[2], alpha, order)
@@ -66,3 +67,4 @@ for lang, data in confusion_matrix.items():
     print(lang)
     for language_guess, ocorr in data.items():
         print("\t" + language_guess, ": ", ocorr)
+
