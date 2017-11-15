@@ -1,0 +1,240 @@
+# Experiment 1
+
+Começou Czech
+Acabou Czech 317.0685374736786 seg
+Começou Danish
+Acabou Danish 315.86302518844604 seg
+Começou Dutch
+Acabou Dutch 344.84407925605774 seg
+Começou English
+Acabou English 338.36443734169006 seg
+Começou Finnish
+Acabou Finnish 327.21841859817505 seg
+Começou French
+Acabou French 303.963876247406 seg
+Começou German
+Acabou German 304.62515020370483 seg
+Começou Greek
+Acabou Greek 302.12405943870544 seg
+Começou Hungarian
+Acabou Hungarian 303.7382917404175 seg
+Começou Italian
+Acabou Italian 304.0051734447479 seg
+Começou Norwegian
+Acabou Norwegian 304.2067015171051 seg
+Começou Polish
+Acabou Polish 304.50317311286926 seg
+Começou Portuguese
+Acabou Portuguese 303.6247982978821 seg
+Começou Romanian
+Acabou Romanian 306.7803692817688 seg
+Começou Russian
+Acabou Russian 303.12257289886475 seg
+Começou Serbian
+Acabou Serbian 304.17848896980286 seg
+Começou Spanish
+Acabou Spanish 305.48861813545227 seg
+Começou Swedish
+Acabou Swedish 305.7587776184082 seg
+[['Czech', 36], ['Danish', 36], ['Dutch', 36], ['English', 36], ['Finnish', 28], ['French', 36], ['German', 36], ['Greek', 36], ['Hungarian', 36], ['Italian', 36], ['Norwegian', 36], ['Polish', 36], ['Portuguese', 36], ['Romanian', 25], ['Russian', 36], ['Serbian', 36], ['Spanish', 36], ['Swedish', 36]]
+[('Czech', 1.0), ('Danish', 1.0), ('Dutch', 1.0), ('English', 1.0), ('Finnish', 0.7777777777777778), ('French', 1.0), ('German', 1.0), ('Greek', 1.0), ('Hungarian', 1.0), ('Italian', 1.0), ('Norwegian', 1.0), ('Polish', 1.0), ('Portuguese', 1.0), ('Romanian', 0.6944444444444444), ('Russian', 1.0), ('Serbian', 1.0), ('Spanish', 1.0), ('Swedish', 1.0)]
+Tempo total: 93.36843391656876 minutos e  22.106034994125366 segundos
+
+# Experiment 2
+
+Começou Czech
+Acabou Czech 56.22220587730408 seg
+Começou Danish
+Acabou Danish 56.18220806121826 seg
+Começou Dutch
+Acabou Dutch 56.57760310173035 seg
+Começou English
+Acabou English 57.446104288101196 seg
+Começou Finnish
+Acabou Finnish 66.98002076148987 seg
+Começou French
+Acabou French 65.47758936882019 seg
+Começou German
+Acabou German 67.20772981643677 seg
+Começou Greek
+Acabou Greek 64.27269101142883 seg
+Começou Hungarian
+Acabou Hungarian 66.4620885848999 seg
+Começou Italian
+Acabou Italian 66.143390417099 seg
+Começou Norwegian
+Acabou Norwegian 65.19677448272705 seg
+Começou Polish
+Acabou Polish 62.776801109313965 seg
+Começou Portuguese
+Acabou Portuguese 63.564379930496216 seg
+Começou Romanian
+Acabou Romanian 63.542436599731445 seg
+Começou Russian
+Acabou Russian 60.034587383270264 seg
+Começou Serbian
+Acabou Serbian 63.547961711883545 seg
+Começou Spanish
+Acabou Spanish 65.4289059638977 seg
+Começou Swedish
+Acabou Swedish 61.72331619262695 seg
+[['Czech', 36], ['Danish', 36], ['Dutch', 36], ['English', 36], ['Finnish', 28], ['French', 36], ['German', 36], ['Greek', 36], ['Hungarian', 36], ['Italian', 36], ['Norwegian', 36], ['Polish', 36], ['Portuguese', 36], ['Romanian', 25], ['Russian', 36], ['Serbian', 36], ['Spanish', 36], ['Swedish', 36]]
+[('Czech', 1.0), ('Danish', 1.0), ('Dutch', 1.0), ('English', 1.0), ('Finnish', 0.7777777777777778), ('French', 1.0), ('German', 1.0), ('Greek', 1.0), ('Hungarian', 1.0), ('Italian', 1.0), ('Norwegian', 1.0), ('Polish', 1.0), ('Portuguese', 1.0), ('Romanian', 0.6944444444444444), ('Russian', 1.0), ('Serbian', 1.0), ('Spanish', 1.0), ('Swedish', 1.0)]
+Tempo total: 18.857079923152924 minutos e  51.424795389175415 segundos
+
+# Experiment 3
+
+Começou Czech
+Acabou Czech 116.94239854812622 seg
+Começou Danish
+Acabou Danish 113.58125638961792 seg
+Começou Dutch
+Acabou Dutch 109.41894364356995 seg
+Começou English
+Acabou English 111.97916746139526 seg
+Começou Finnish
+Acabou Finnish 114.35085320472717 seg
+Começou French
+Acabou French 114.70311856269836 seg
+Começou German
+Acabou German 108.7372772693634 seg
+Começou Greek
+Acabou Greek 106.78683710098267 seg
+Começou Hungarian
+Acabou Hungarian 112.32193493843079 seg
+Começou Italian
+Acabou Italian 106.77116227149963 seg
+Começou Norwegian
+Acabou Norwegian 110.68036890029907 seg
+Começou Polish
+Acabou Polish 109.83633923530579 seg
+Começou Portuguese
+Acabou Portuguese 106.8870358467102 seg
+Começou Romanian
+Acabou Romanian 108.2371015548706 seg
+Começou Russian
+Acabou Russian 110.52824783325195 seg
+Começou Serbian
+Acabou Serbian 106.52362060546875 seg
+Começou Spanish
+Acabou Spanish 107.90286540985107 seg
+Começou Swedish
+Acabou Swedish 106.64022612571716 seg
+[['Czech', 36], ['Danish', 36], ['Dutch', 36], ['English', 36], ['Finnish', 28], ['French', 36], ['German', 36], ['Greek', 36], ['Hungarian', 36], ['Italian', 36], ['Norwegian', 36], ['Polish', 36], ['Portuguese', 36], ['Romanian', 25], ['Russian', 36], ['Serbian', 36], ['Spanish', 36], ['Swedish', 36]]
+[('Czech', 1.0), ('Danish', 1.0), ('Dutch', 1.0), ('English', 1.0), ('Finnish', 0.7777777777777778), ('French', 1.0), ('German', 1.0), ('Greek', 1.0), ('Hungarian', 1.0), ('Italian', 1.0), ('Norwegian', 1.0), ('Polish', 1.0), ('Portuguese', 1.0), ('Romanian', 0.6944444444444444), ('Russian', 1.0), ('Serbian', 1.0), ('Spanish', 1.0), ('Swedish', 1.0)]
+Tempo total: 33.13763855695724 minutos e  8.258313417434692 segundos
+Czech
+Czech :  36
+Danish
+Danish :  36
+Dutch
+Dutch :  36
+English
+English :  36
+Finnish
+Finnish :  28
+Romanian :  8
+French
+French :  36
+German
+German :  36
+Greek
+Greek :  36
+Hungarian
+Hungarian :  36
+Italian
+Italian :  36
+Norwegian
+Norwegian :  36
+Polish
+Polish :  36
+Portuguese
+Portuguese :  36
+Romanian
+Romanian :  25
+Finnish :  11
+Russian
+Russian :  36
+Serbian
+Serbian :  36
+Spanish
+Spanish :  36
+Swedish
+Swedish :  36
+
+# Expermient 4 (sem o romanian.txt)
+
+Começou Czech
+Acabou Czech 52.541173219680786 seg
+Começou Danish
+Acabou Danish 51.63823175430298 seg
+Começou Dutch
+Acabou Dutch 52.4775390625 seg
+Começou English
+Acabou English 51.9552366733551 seg
+Começou Finnish
+Acabou Finnish 53.15177321434021 seg
+Começou French
+Acabou French 53.23016929626465 seg
+Começou German
+Acabou German 53.45323729515076 seg
+Começou Greek
+Acabou Greek 51.52591419219971 seg
+Começou Hungarian
+Acabou Hungarian 53.16850662231445 seg
+Começou Italian
+Acabou Italian 51.99597477912903 seg
+Começou Norwegian
+Acabou Norwegian 53.01623010635376 seg
+Começou Polish
+Acabou Polish 53.54056763648987 seg
+Começou Portuguese
+Acabou Portuguese 53.88009166717529 seg
+Começou Russian
+Acabou Russian 51.53708076477051 seg
+Começou Serbian
+Acabou Serbian 50.57878398895264 seg
+Começou Spanish
+Acabou Spanish 52.39606022834778 seg
+Começou Swedish
+Acabou Swedish 53.41682982444763 seg
+[['Czech', 36], ['Danish', 36], ['Dutch', 36], ['English', 36], ['Finnish', 36], ['French', 36], ['German', 36], ['Greek', 36], ['Hungarian', 36], ['Italian', 36], ['Norwegian', 36], ['Polish', 36], ['Portuguese', 36], ['Russian', 36], ['Serbian', 36], ['Spanish', 36], ['Swedish', 36]]
+[('Czech', 1.0), ('Danish', 1.0), ('Dutch', 1.0), ('English', 1.0), ('Finnish', 1.0), ('French', 1.0), ('German', 1.0), ('Greek', 1.0), ('Hungarian', 1.0), ('Italian', 1.0), ('Norwegian', 1.0), ('Polish', 1.0), ('Portuguese', 1.0), ('Russian', 1.0), ('Serbian', 1.0), ('Spanish', 1.0), ('Swedish', 1.0)]
+Tempo total: 14.936468370755513 minutos e  56.18810224533081 segundos
+Czech
+	 Czech :  36
+Danish
+	 Danish :  36
+Dutch
+	 Dutch :  36
+English
+	 English :  36
+Finnish
+	 Finnish :  36
+French
+	 French :  36
+German
+	 German :  36
+Greek
+	 Greek :  36
+Hungarian
+	 Hungarian :  36
+Italian
+	 Italian :  36
+Norwegian
+	 Norwegian :  36
+Polish
+	 Polish :  36
+Portuguese
+	 Portuguese :  36
+Russian
+	 Russian :  36
+Serbian
+	 Serbian :  36
+Spanish
+	 Spanish :  36
+Swedish
+	 Swedish :  36
+	 
+	 
+
