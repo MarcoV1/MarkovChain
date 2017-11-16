@@ -23,7 +23,6 @@ def bit_estimation_for_guess(text_class, lp, cnl, alpha, order):
 
 def main():
     lang_bit = []
-    lang_length = []
     manual_values, text_guess = "", ""
     quit = False
 
@@ -93,32 +92,12 @@ Choose an option.
             cnl = combination_next_letter(order, text)
             lp = letter_probability(cnl, alpha, text)
             lang_bit.append((re.sub(".txt", "", filename).capitalize(), bit_estimation_for_guess(text_guess, lp, cnl, alpha, order)))
-            lang_length.append((len(text), re.sub(".txt", "", filename).capitalize()))
 
-        print(lang_length)
         print(lang_bit)
         print("The text is in: " + (min(lang_bit, key=lambda t: t[1])[0]))
     else:
         print("Program exit.")
         exit()
-
-
-    '''
-    order = int(input("Ordem: "))  # valor da ordem
-    alpha = float(input("Valor de alpha: "))  # valor de alpha
-    text_class = input("Nome do txtfile a ser adivinhado ([language(em inglês)]_guess.txt) : ")
-    text_class = read_file(os.path.join(os.getcwd(), "guess_texts", text_class))
-
-
-    for filename in os.listdir(os.path.join(os.getcwd(), "Idioms")):
-        text = read_file(os.path.join(os.getcwd(), "Idioms", filename))
-        cnl = combination_next_letter(order, text)
-        lp = letter_probability(cnl, alpha, text)
-        lang_bit.append((re.sub(".txt", "", filename).capitalize(), bit_estimation_for_guess(text_class, lp, cnl, alpha, order)))
-
-    print(lang_bit)
-    print("The text is in: " + (min(lang_bit, key=lambda t: t[1])[0]))
-    '''
 
 if __name__ == '__main__':
     ra = ""

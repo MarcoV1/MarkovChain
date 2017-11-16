@@ -6,9 +6,8 @@ import os
 import time as tm
 
 width = 0.15
-alpha_set = np.asarray([0.9, 0.5, 0.1, 0.01, 0.001, 0.0001, 0.00001, 0.000001, 0.0000001])
+#alpha_set = np.asarray([0.9, 0.5, 0.1, 0.01, 0.001, 0.0001, 0.00001, 0.000001, 0.0000001]) # alpha
 width_set = np.arange(1, 10)
-# order = 7
 alpha = 0.9
 
 total = tm.time()
@@ -18,10 +17,10 @@ it = read_file(os.path.join(os.getcwd(), "guess_texts", "italian_guess.txt"))
 text_pt = read_file(os.path.join(os.getcwd(), "Idioms", "portuguese.txt"))
 text_en = read_file(os.path.join(os.getcwd(), "Idioms", "english.txt"))
 text_fr = read_file(os.path.join(os.getcwd(), "Idioms", "french.txt"))
-text_de = read_file(os.path.join(os.getcwd(), "Idioms", "german.txt"))
+text_es = read_file(os.path.join(os.getcwd(), "Idioms", "spanish.txt"))
 text_it = read_file(os.path.join(os.getcwd(), "Idioms", "italian.txt"))
 
-langbit_pt, langbit_en, langbit_fr, langbit_de, langbit_it = [], [], [], [], []
+langbit_pt, langbit_en, langbit_fr, langbit_es, langbit_it = [], [], [], [], []
 i = 0
 for order in width_set:
     i += 1
@@ -36,8 +35,8 @@ for order in width_set:
     cnl_fr = combination_next_letter(order, text_fr)
     lp_fr = letter_probability(cnl_fr, alpha, text_fr)
 
-    cnl_de = combination_next_letter(order, text_de)
-    lp_de = letter_probability(cnl_de, alpha, text_de)
+    cnl_es = combination_next_letter(order, text_es)
+    lp_es = letter_probability(cnl_es, alpha, text_es)
 
     cnl_it = combination_next_letter(order, text_it)
     lp_it = letter_probability(cnl_it, alpha, text_it)
@@ -45,7 +44,7 @@ for order in width_set:
     langbit_pt.append(bit_estimation_for_guess(it, lp_pt, cnl_pt, alpha, order))
     langbit_en.append(bit_estimation_for_guess(it, lp_en, cnl_en, alpha, order))
     langbit_fr.append(bit_estimation_for_guess(it, lp_fr, cnl_fr, alpha, order))
-    langbit_de.append(bit_estimation_for_guess(it, lp_de, cnl_de, alpha, order))
+    langbit_es.append(bit_estimation_for_guess(it, lp_es, cnl_es, alpha, order))
     langbit_it.append(bit_estimation_for_guess(it, lp_it, cnl_it, alpha, order))
 
     end = tm.time() - start
@@ -55,19 +54,19 @@ for order in width_set:
 fig, ax = plt.subplots()
 
 enbit = ax.bar(width_set, langbit_en, width, color='r')
-ptbit = ax.bar(width_set + width, langbit_pt, width, color='#1a5916')
-frbit = ax.bar(width_set + width*2, langbit_fr, width, color='b')
-debit = ax.bar(width_set + width*3, langbit_de, width, color='#f47742')
+frbit = ax.bar(width_set + width, langbit_fr, width, color='b')
+ptbit = ax.bar(width_set + width*2, langbit_pt, width, color='#1a5916')
+esbit = ax.bar(width_set + width*3, langbit_es, width, color='y')
 itbit = ax.bar(width_set + width*4, langbit_it, width, color='#52cc2a')
 
 # add some text for labels, title and axes ticks
 ax.set_ylabel('Bits')
 ax.set_title('Estimação de bits para Italiano')
 ax.set_xticks(width_set + width / 2)
-# ax.set_xticklabels(('0.9', '0.5', '0.1', '0.01', '0.001', '0.0001', '0.00001', '0.000001', '0.0000001'))
+#ax.set_xticklabels(('0.9', '0.5', '0.1', '0.01', '0.001', '0.0001', '0.00001', '0.000001', '0.0000001'))
 ax.set_xticklabels(('Ordem 1', 'Ordem 2', 'Ordem 3', 'Ordem 4', 'Ordem 5', 'Ordem 6', 'Ordem 7', 'Ordem 8', 'Ordem 9'))
 
-ax.legend((enbit[0], ptbit[0], frbit[0], debit[0], itbit[0]), ('Inglês', 'Português', 'Francês', 'Alemão', 'Italiano'))
+ax.legend((enbit[0], frbit[0], ptbit[0], esbit[0], itbit[0]), ('Inglês', 'Francês', 'Português', 'Espanhol', 'Italiano'))
 
 
 def autolabel(rects):
